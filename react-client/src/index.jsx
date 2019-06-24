@@ -24,8 +24,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <Header/>
-      <button onClick={this.openModal}>Compose</button>
+      <Header onCompose={this.openModal}/>
       <EditorModal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}

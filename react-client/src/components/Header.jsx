@@ -3,7 +3,8 @@ import {
   HeaderContainer,
   HeaderSearchInput,
   HeaderSearchDiv,
-  ProfileImage
+  ProfileImage,
+  ComposeButton,
 } from '../styles/HeaderStyles.js';
 
 class Header extends React.Component {
@@ -56,8 +57,8 @@ class Header extends React.Component {
   render() {
     return (
       <HeaderContainer>
-        <div>Blogger</div>
         {this.HeaderSearch()}
+        <ComposeButton onClick={this.props.onCompose}>Compose</ComposeButton>
         <ProfileImage alt="profile-pic" src="https://a0.muscache.com/im/pictures/30397eff-806e-4893-ae88-ea577a5c3adc.jpg?aki_policy=profile_x_medium" />
       </HeaderContainer>
     )

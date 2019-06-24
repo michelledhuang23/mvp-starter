@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
-  font-family: 'Montserrat', sans-serif;
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -11,7 +10,6 @@ const HeaderContainer = styled.div`
 
 const HeaderSearchInput = styled.input`
   background-color: transparent;
-  font-family: 'Montserrat', sans-serif;
   border: 0px;
   margin: 0px;
   padding: 0px;
@@ -45,9 +43,29 @@ const ProfileImage = styled.img`
   width: 40px;
 `;
 
+const ComposeButton = styled.button`
+  width: 120px;
+  height: 40px;
+  margin: 0px 20px;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+
+  background-color: #ffffff;
+  color: #ff6768;
+  border: 2px solid #ff6768;
+
+  &:hover {
+    background-color: #ff6768;
+    border: none;
+    color: #ffffff;
+  }
+`;
+
 module.exports = {
   HeaderContainer,
   HeaderSearchInput,
   HeaderSearchDiv,
   ProfileImage,
+  ComposeButton,
 }

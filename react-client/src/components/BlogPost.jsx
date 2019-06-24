@@ -5,9 +5,9 @@ import styled from 'styled-components';
 const MarkdownContainer = styled.div`
   width: 50vh;
   height: 50vh;
-  padding: 0px 20px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  padding: 20px 20px;
+  overflow: auto;
+  color: #17223b;
 `;
 
 class BlogPost extends React.Component {

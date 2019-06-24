@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const InputTextArea = styled.textarea`
   width: 50vh;
   height: 50vh;
-  background-color: rgb(38, 50, 55);
+  background-color: #17223b;
   padding: 20px 20px;
   border: none;
-  color: rgb(209, 209, 209);
+  color: #ffffff;
+  font-size: 15px;
 
   &:focus {
     outline: none;
