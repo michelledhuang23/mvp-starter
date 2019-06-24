@@ -40,7 +40,7 @@ class App extends React.Component {
       })
   }
 
-  onCreatePost(text) {
+  onCreatePost(text, tags) {
     fetch('/posts', {
       method: 'POST',
       headers: {
@@ -50,7 +50,7 @@ class App extends React.Component {
         user_id: this.userId,
         user_name: 'Michelle Huang',
         content: text,
-        tags: '#hardcoded #cssishard #cats'
+        tags: tags,
       })
     })
     .then(() => {

@@ -66,15 +66,24 @@ class EditorModal extends React.Component {
     super(props);
     this.state = { 
       text: '',
+      tags: [],
     }
 
     this.onInputChange = this.onInputChange.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.onTagsInputChange = this.onTagsInputChange.bind(this);
   }
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
     console.log('after open');
+  }
+
+  onTagsInputChange(e) {
+    const tags = e.target.value.split(' ').filter(tag => tag[0] === '#');
+    this.setState({
+      tags: tags,
+    });
   }
 
   onInputChange(e) {
@@ -97,8 +106,8 @@ class EditorModal extends React.Component {
             <OutputBox text={this.state.text}/>
           </InputContainer>
           <div style={{"width": "100%", "display": "flex", "flexDirection": "row"}}>
-            <TagsInput placeholder="#cats #hrsf117 #hackreactor"/>
-            <CreateButton onClick={this.props.onCreatePost.bind(null, this.state.text)}>Create</CreateButton>
+            <TagsInput placeholder="#cats #hrsf117 #hackreactor" onChange={this.onTagsInputChange}/>
+            <CreateButton onClick={this.props.onCreatePost.bind(null, this.state.text, this.state.tags.join(' '))}>Create</CreateButton>
           </div>
         </div>
       </Modal>
