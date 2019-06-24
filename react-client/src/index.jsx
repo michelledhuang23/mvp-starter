@@ -19,28 +19,13 @@ class App extends React.Component {
     });
   }
 
-  // componentDidMount() {
-  //   const id = window.location.pathname.substring(8);
-  //   const limit = 1;
-  //   let url;
-  //   if (id > limit) {
-  //     url = `/travel/1/saved`;
-  //   } else {
-  //     url = `/travel/${id}/saved`
-  //   }
-  //   fetch(url)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //     })
-  //     .catch(error => console.error(error))
-  // }
-
   render () {
     return (<div>
       <Header/>
-      <InputBox onChange={this.onInputChange}/>
-      <BlogPost text={this.state.text}/>
+      <div style={{"display": "flex", "flexDirection": "row"}}>
+        <InputBox onChange={this.onInputChange}/>
+        <BlogPost text={this.state.text}/>
+      </div>
     </div>)
   }
 }
