@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import MarkDown from 'markdown-react-js';
 
 const CardContainer = styled.div`
   width: 500px;
@@ -49,7 +50,9 @@ class Post extends React.Component {
     return (
       <CardContainer>
         <Author>{this.props.post.user_name}</Author>
-        <PostBody>{this.props.post.content}</PostBody>
+        <PostBody>
+          <MarkDown text={this.props.post.content} />
+        </PostBody>
         <Tags>
         {this.props.post.tags.split(' ').map((tag, i) => {
           return <Tag key={'tag-' + i}>{tag}</Tag>
