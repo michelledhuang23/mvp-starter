@@ -3,8 +3,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'FILL_ME_IN',
-  database : 'test'
+  database : 'blogger'
 });
 
 var selectAll = function(callback) {

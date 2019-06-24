@@ -10,11 +10,11 @@ var app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../react-client/dist')));
 
-app.get('/travel/:id', (req, res) => {
+app.get('/blog/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 });
 
-app.get('/travel/:id/saved', function (req, res) {
+app.get('/posts/:id', function (req, res) {
   console.log('hello');
   res.status(200).send();
   // items.selectAll(function(err, data) {

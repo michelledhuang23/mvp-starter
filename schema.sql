@@ -1,14 +1,14 @@
-DROP DATABASE IF EXISTS test;
+DROP DATABASE IF EXISTS blogger;
 
-CREATE DATABASE test;
+CREATE DATABASE blogger;
 
-USE test;
+USE blogger;
 
-CREATE TABLE items (
-  id int NOT NULL AUTO_INCREMENT,
-  quantity integer NOT NULL,
-  description varchar(50) NOT NULL,
-  PRIMARY KEY (ID)
+CREATE TABLE posts (
+  post_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  user_id int NOT NULL,
+  content text,
+  tags varchar(255)
 );
 
 /*  Execute this file from the command line by typing:

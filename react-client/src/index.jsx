@@ -15,6 +15,25 @@ class App extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
+  componentDidMount() {
+    const id = window.location.pathname.substring(6);
+    const max = 10;
+    const min = 1;
+    let url;
+    if (id > max || id < min) {
+      url = '/posts/1';
+    } else {
+      url = `/posts/${id}`
+    }
+    fetch(url)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }
+
   openModal() {
     this.setState({modalIsOpen: true});
   }
