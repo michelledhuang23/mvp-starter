@@ -10,7 +10,7 @@ const MarkdownContainer = styled.div`
   color: #17223b;
 `;
 
-class BlogPost extends React.Component {
+class OutputBox extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -29,4 +29,4 @@ class BlogPost extends React.Component {
   }
 }
 
-export default BlogPost;
+export default OutputBox;
