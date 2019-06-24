@@ -4,6 +4,21 @@ import OutputBox from './OutputBox.jsx';
 import InputBox from './InputBox.jsx';
 import styled from 'styled-components';
 
+const TagsInput = styled.input`
+  width: 100%;
+  margin: 10px;
+  padding: none;
+  border: 2px solid #6b778d;
+  border-radius: 3px;
+  color: #6b778d;
+  font-size: 15px;
+  padding: 0 20px;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
 const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -14,19 +29,19 @@ const InputContainer = styled.div`
 
 const CreateButton = styled.button`
   margin: 10px;
-  width: 120px;
+  width: 150px;
   height: 40px;
-  border: 2px solid #6b778d;
-  color: #6b778d;
-  background-color: #ffffff;
   border-radius: 3px;
   font-size: 15px;
   cursor: pointer;
+  background-color: #6b778d;
+  border: none;
+  color: #ffffff;
 
   &:hover {
-    background-color: #6b778d;
-    border: none;
-    color: #ffffff;
+    border: 2px solid #6b778d;
+    color: #6b778d;
+    background-color: #ffffff;
   }
 `;
 
@@ -81,7 +96,10 @@ class EditorModal extends React.Component {
             <InputBox onChange={this.onInputChange}/>
             <OutputBox text={this.state.text}/>
           </InputContainer>
-          <CreateButton onClick={this.props.onCreatePost.bind(null, this.state.text)}>Create</CreateButton>
+          <div style={{"width": "100%", "display": "flex", "flexDirection": "row"}}>
+            <TagsInput placeholder="#cats #hrsf117 #hackreactor"/>
+            <CreateButton onClick={this.props.onCreatePost.bind(null, this.state.text)}>Create</CreateButton>
+          </div>
         </div>
       </Modal>
     );
