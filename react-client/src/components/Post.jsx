@@ -6,7 +6,6 @@ const CardContainer = styled.div`
   border: none;
   border-radius: 3px;
   padding: 10px 20px;
-  margin: 10px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
 `;
 
@@ -48,12 +47,12 @@ class Post extends React.Component {
   render() {
     return (
       <CardContainer>
-        <Author>Tianyu Li</Author>
-        <PostBody>Hello World</PostBody>
+        <Author>{this.props.post.user_name}</Author>
+        <PostBody>{this.props.post.content}</PostBody>
         <Tags>
-          <Tag>#facebook</Tag>
-          <Tag>#naomi</Tag>
-          <Tag>#cats</Tag>
+        {this.props.post.tags.split(' ').map((tag, i) => {
+          return <Tag key={'tag-' + i}>{tag}</Tag>
+        })}
         </Tags>
       </CardContainer>
     );

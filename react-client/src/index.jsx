@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header.jsx';
 import EditorModal from './components/EditorModal.jsx';
-import Post from './components/Post.jsx';
+import Feed from './components/Feed.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
+      posts: [],
       modalIsOpen: false,
     }
 
@@ -29,8 +30,8 @@ class App extends React.Component {
       .then((res) => {
         return res.json();
       })
-      .then(data => {
-        console.log(data);
+      .then(posts => {
+        this.setState({posts});
       })
       .catch((err) => {
         console.error(err);
@@ -52,7 +53,7 @@ class App extends React.Component {
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           />
-      <Post />
+      <Feed posts={this.state.posts}/>
     </div>)
   }
 }
