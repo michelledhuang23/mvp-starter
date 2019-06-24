@@ -81,7 +81,7 @@ class EditorModal extends React.Component {
             <InputBox onChange={this.onInputChange}/>
             <OutputBox text={this.state.text}/>
           </InputContainer>
-          <CreateButton>Create</CreateButton>
+          <CreateButton onClick={this.props.onCreatePost.bind(null, this.state.text)}>Create</CreateButton>
         </div>
       </Modal>
     );

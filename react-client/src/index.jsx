@@ -14,10 +14,12 @@ class App extends React.Component {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onCreatePost = this.onCreatePost.bind(this);
   }
 
   componentDidMount() {
     const id = window.location.pathname.substring(6);
+    this.userId = id;
     const max = 10;
     const min = 1;
     let url;
@@ -38,6 +40,27 @@ class App extends React.Component {
       })
   }
 
+  onCreatePost(text) {
+    fetch('/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user_id: this.userId,
+        user_name: 'Michelle Huang',
+        content: text,
+        tags: '#hardcoded #cssishard #cats'
+      })
+    })
+    .then(() => {
+      window.location.reload(false);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+  }
+
   openModal() {
     this.setState({modalIsOpen: true});
   }
@@ -52,6 +75,7 @@ class App extends React.Component {
       <EditorModal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
+          onCreatePost={this.onCreatePost}
           />
       <Feed posts={this.state.posts}/>
     </div>)

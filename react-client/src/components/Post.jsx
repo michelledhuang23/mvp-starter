@@ -7,6 +7,7 @@ const CardContainer = styled.div`
   border-radius: 3px;
   padding: 10px 20px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
+  margin-bottom: 20px;
 `;
 
 const Author = styled.p`
