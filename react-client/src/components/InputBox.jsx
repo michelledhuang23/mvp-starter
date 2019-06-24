@@ -19,10 +19,18 @@ class InputBox extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    const defaultText = '# Hello There\nWhat\'s on your mind?'
+    const text = this.props.text || defaultText;
+    const element = document.getElementById('input-textarea');
+    element.value = text;
+    this.props.onChange(text);
+  }
   
   render() {
     return (
-      <InputTextArea className='input-box' onChange={this.props.onChange} />
+      <InputTextArea id="input-textarea" className='input-box' onChange={(e) => { this.props.onChange(e.target.value) }} />
     );
   }
 }

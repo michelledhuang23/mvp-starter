@@ -86,9 +86,9 @@ class EditorModal extends React.Component {
     });
   }
 
-  onInputChange(e) {
+  onInputChange(text) {
     this.setState({
-      text: e.target.value
+      text
     });
   }
   
