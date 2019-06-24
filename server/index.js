@@ -23,6 +23,19 @@ app.get('/posts/:id', function (req, res) {
   });
 });
 
+app.post('/posts', function (req, res) {
+  const post = req.body;
+  console.log(post);
+  db.createPost(post, function(err, data) {
+    if(err) {
+      console.error(err);
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
 app.listen(port, function() {
   console.log(`listening on port ${port}!`);
 });

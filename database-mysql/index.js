@@ -16,6 +16,17 @@ var selectByID = function(id, callback) {
   });
 };
 
+var createPost = function(post, callback) {
+  connection.query(`INSERT INTO posts (user_id, user_name, content, tags) VALUES (${post.user_id}, "${post.user_name}", "${post.content}", "${post.tags}");`, function(err, results, fields) {
+    if(err) {
+      callback(err, null);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
 module.exports = {
-  selectByID
+  selectByID,
+  createPost
 };
