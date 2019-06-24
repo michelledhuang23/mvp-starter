@@ -6,6 +6,7 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0 10px;
 `;
 
 const HeaderSearchInput = styled.input`
