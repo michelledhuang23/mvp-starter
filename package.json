@@ -19,7 +19,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.0",
-    "google-map-react": "^1.1.4",
+    "markdown-react-js": "^1.0.2",
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
     "react": "^16.8.6",

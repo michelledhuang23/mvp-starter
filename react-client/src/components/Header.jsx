@@ -56,7 +56,7 @@ class Header extends React.Component {
   render() {
     return (
       <HeaderContainer>
-        <div>TravelDiary</div>
+        <div>Blogger</div>
         {this.HeaderSearch()}
         <ProfileImage alt="profile-pic" src="https://a0.muscache.com/im/pictures/30397eff-806e-4893-ae88-ea577a5c3adc.jpg?aki_policy=profile_x_medium" />
       </HeaderContainer>
