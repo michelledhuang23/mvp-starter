@@ -3,12 +3,19 @@ import styled from 'styled-components';
 import MarkDown from 'markdown-react-js';
 
 const CardContainer = styled.div`
-  width: 500px;
+  width: 20%;
+  min-width: 250px;
   border: none;
   border-radius: 3px;
   padding: 10px 20px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);
   margin-bottom: 20px;
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 5px 5px 0 rgba(0,0,0,0.16);
+  }
 `;
 
 const Author = styled.p`

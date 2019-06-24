@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import Post from './Post.jsx';
 
 const FeedContainer = styled.div`
-  width: 500px;
+  width: 100%;
   margin: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 
 class Feed extends React.Component {

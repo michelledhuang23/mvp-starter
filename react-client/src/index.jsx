@@ -20,7 +20,7 @@ class App extends React.Component {
   componentDidMount() {
     const id = window.location.pathname.substring(6);
     this.userId = id;
-    const max = 10;
+    const max = 2;
     const min = 1;
     let url;
     if (id > max || id < min) {
@@ -48,7 +48,6 @@ class App extends React.Component {
       },
       body: JSON.stringify({
         user_id: this.userId,
-        user_name: 'Michelle Huang',
         content: text,
         tags: tags,
       })
