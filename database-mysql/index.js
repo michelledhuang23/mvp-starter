@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
 });
 
 var selectByID = function(id, callback) {
-  connection.query(`SELECT * FROM posts WHERE user_id = ${id}`, function(err, results, fields) {
+  connection.query(`SELECT * FROM posts WHERE user_id = ${id} ORDER BY created_at DESC`, function(err, results, fields) {
     if(err) {
       callback(err, null);
     } else {
