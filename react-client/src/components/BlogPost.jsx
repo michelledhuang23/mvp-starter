@@ -1,5 +1,14 @@
 import React from 'react';
 import MarkDown from 'markdown-react-js';
+import styled from 'styled-components';
+
+const MarkdownContainer = styled.div`
+  width: 50vh;
+  height: 50vh;
+  padding: 0px 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
 
 class BlogPost extends React.Component {
   constructor (props) {
@@ -13,7 +22,9 @@ class BlogPost extends React.Component {
 
   render() {
     return (
-      <MarkDown text={this.props.text}/>
+      <MarkdownContainer>
+        <MarkDown text={this.props.text}/>
+      </MarkdownContainer>
     );
   }
 }
