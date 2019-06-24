@@ -27,7 +27,10 @@ class App extends React.Component {
     }
     fetch(url)
       .then((res) => {
-        console.log(res);
+        return res.json();
+      })
+      .then(data => {
+        console.log(data);
       })
       .catch((err) => {
         console.error(err);

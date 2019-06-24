@@ -2,9 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 const path = require('path');
 const port = 3000;
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
-// var items = require('../database-mongo');
+var db = require('../database-mysql');
 
 var app = express();
 app.use(bodyParser.json());
@@ -15,15 +13,14 @@ app.get('/blog/:id', (req, res) => {
 });
 
 app.get('/posts/:id', function (req, res) {
-  console.log('hello');
-  res.status(200).send();
-  // items.selectAll(function(err, data) {
-  //   if(err) {
-  //     res.sendStatus(500);
-  //   } else {
-  //     res.json(data);
-  //   }
-  // });
+  const id = req.params.id;
+  db.selectByID(id, function(err, data) {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
 });
 
 app.listen(port, function() {
