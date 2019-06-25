@@ -14,6 +14,7 @@ class Header extends React.Component {
       center: {lat: 59.95, lng: 30.33},
       zoom: 0
     }
+    this.getProfileURL = this.getProfileURL.bind(this);
   }
   
   SearchSVG() {
@@ -53,16 +54,27 @@ class Header extends React.Component {
     );
   }
 
+  getProfileURL() {
+    if (this.props.id === '1') {
+      return "https://a0.muscache.com/im/pictures/30397eff-806e-4893-ae88-ea577a5c3adc.jpg?aki_policy=profile_x_medium";
+    } else {
+      return "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-1/p320x320/52970886_10107329474600973_2427085606652739584_n.jpg?_nc_cat=100&_nc_oc=AQkK_eUWealzSnDXQkRXtp7sSG9XAVyRbwE5eiU1yq851aC1Y1KggCeLGcY4BGjGqeNAkWFKnjE4Nw3zlQ8nOq1E&_nc_ht=scontent-sjc3-1.xx&oh=aa8fa88fa9a3339b710810fa9bf87afd&oe=5DC561F8";
+    }
+  }
+
 
   render() {
     return (
       <HeaderContainer>
         {this.HeaderSearch()}
         <ComposeButton onClick={this.props.onCompose}>Compose</ComposeButton>
-        <ProfileImage alt="profile-pic" src="https://a0.muscache.com/im/pictures/30397eff-806e-4893-ae88-ea577a5c3adc.jpg?aki_policy=profile_x_medium" />
+        <ProfileImage alt="profile-pic" src={this.getProfileURL()} />
       </HeaderContainer>
     )
   }
 }
 
 export default Header;
+
+//"https://a0.muscache.com/im/pictures/30397eff-806e-4893-ae88-ea577a5c3adc.jpg?aki_policy=profile_x_medium"
+//https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-1/p320x320/52970886_10107329474600973_2427085606652739584_n.jpg?_nc_cat=100&_nc_oc=AQkK_eUWealzSnDXQkRXtp7sSG9XAVyRbwE5eiU1yq851aC1Y1KggCeLGcY4BGjGqeNAkWFKnjE4Nw3zlQ8nOq1E&_nc_ht=scontent-sjc3-1.xx&oh=aa8fa88fa9a3339b710810fa9bf87afd&oe=5DC561F8

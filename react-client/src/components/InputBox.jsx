@@ -21,7 +21,7 @@ class InputBox extends React.Component {
   }
 
   componentDidMount() {
-    const defaultText = '# Hello There\nWhat\'s on your mind?'
+    const defaultText = '# Hello There\nWhat are you thinking about?'
     const text = this.props.text || defaultText;
     const element = document.getElementById('input-textarea');
     element.value = text;

@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import MarkDown from 'markdown-react-js';
+import moment from 'moment';
 
 const CardContainer = styled.div`
   width: 20%;
-  min-width: 250px;
+  min-width: 415px;
   border: none;
   border-radius: 3px;
   padding: 10px 20px;
@@ -19,9 +20,18 @@ const CardContainer = styled.div`
 `;
 
 const Author = styled.p`
+  color: #385898;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 0;
+`;
+
+const DateStyled = styled.p`
   color: #777777;
   font-size: 12px;
-  margin: 10px 0;
+  margin-top: 2px;
+  margin-bottom: 0;
 `;
 
 const PostBody = styled.div`
@@ -53,10 +63,18 @@ class Post extends React.Component {
     super(props);
   }
   
+  formatDate() {
+    const day = this.props.post.created_at.split('T')[0];
+    const time = this.props.post.created_at.split('T')[1];
+    const datetime = day + ':' + time;
+    var format = new Date(datetime);
+    return moment(format).format('lll');
+  }
   render() {
     return (
       <CardContainer>
         <Author>{this.props.post.user_name}</Author>
+        <DateStyled>{this.formatDate()}</DateStyled>
         <PostBody>
           <MarkDown text={this.props.post.content} />
         </PostBody>

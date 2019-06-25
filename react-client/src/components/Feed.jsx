@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import Post from './Post.jsx';
 
 const FeedContainer = styled.div`
-  width: 100%;
+  height: 800px;
   margin: 10px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: flex-start;
   align-items: flex-start;
 `;

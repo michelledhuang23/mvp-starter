@@ -20,7 +20,7 @@ class App extends React.Component {
   componentDidMount() {
     const id = window.location.pathname.substring(6);
     this.userId = id;
-    const max = 2;
+    const max = 3;
     const min = 1;
     let url;
     if (id > max || id < min) {
@@ -70,7 +70,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <Header onCompose={this.openModal}/>
+      <Header onCompose={this.openModal} id={this.userId}/>
       <EditorModal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
