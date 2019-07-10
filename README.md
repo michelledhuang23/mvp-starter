@@ -1,5 +1,5 @@
 # postable
-Booking application with built-in markdown editor
+Blogging application with built-in markdown editor
 
 ## Stack
 **Front-End**: React, Styled Components<br />
