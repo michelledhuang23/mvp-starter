@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Post from './Post.jsx';
 
 const FeedContainer = styled.div`
-  height: 800px;
+  max-height: 800px;
   margin: 10px;
   display: flex;
   flex-flow: column wrap;
